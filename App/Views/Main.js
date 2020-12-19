@@ -15,9 +15,9 @@ const Main = (props) => {
                 <View style={styles.total}>
                     <Text style={[styles.general_resume_txt, styles.white_txt]}>Resumen General</Text>
                     <Text style={[styles.money_txt, styles.white_txt]}>Te deben</Text>
-                    <Text style={[styles.money_val, styles.white_txt]}>${props.deben_txt}</Text>
+                    <Text style={[styles.money_val, { color: '#9AE7AB' }]}>${props.deben_value}</Text>
                     <Text style={[styles.money_txt, styles.white_txt]}>Te debes</Text>
-                    <Text style={[styles.money_val, , styles.white_txt]}>${props.debes_txt}</Text>
+                    <Text style={[styles.money_val, , { color: '#EFB7BD' }]}>${props.debes_value}</Text>
                 </View>
                 <View style={styles.in_th_walet}>
                     <Text style={[styles.money_txt, styles.white_txt]}>En esta cartera</Text>

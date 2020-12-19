@@ -11,7 +11,7 @@ import Main from './App/Views/Main'
 
 const App = () => {
   return (
-    <Main deben_txt='400.000' debes_txt='100.000'>
+    <Main deben_value='400.000' debes_value='100.000'>
 
     </Main>
   );
