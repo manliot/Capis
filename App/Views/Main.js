@@ -1,43 +1,62 @@
 import React from 'react';
-import { StyleSheet, View, Text, TouchableOpacity, ImageBackground } from 'react-native'
+import { StyleSheet, View, Text, TouchableOpacity, ImageBackground, ScrollView } from 'react-native'
 import Card_Wallet from '../Components/Card_Wallet'
 
-const Main = () => {
+const Main = (props) => {
     return (
-        <View style={styles.container}>
-            <View style={styles.info_money}>
-                <ImageBackground source={require('../Assets/FONDO-V1.png')}
-                    style={[styles.bg_img, styles.bg]}
-                    resizeMethod='scale'>
-                    <View style={styles.title_wallet}>
-                        <Text style={[styles.title_wallet_txt, , styles.white_txt]}>Principal</Text>
-                    </View>
-                    <View style={styles.total}>
-                        <Text style={[styles.general_resume_txt, styles.white_txt]}>Resumen General</Text>
-                        <Text style={[styles.money_txt, styles.white_txt]}>Te deben</Text>
-                        <Text style={[styles.money_val, styles.white_txt]}>$400.000</Text>
-                        <Text style={[styles.money_txt, styles.white_txt]}>Te debes</Text>
-                        <Text style={[styles.money_val, , styles.white_txt]}>$100.000</Text>
-                    </View>
-                    <View style={styles.in_th_walet}>
-                        <Text style={[styles.money_txt, styles.white_txt]}>En esta cartera</Text>
-                        <Text style={[styles.money_val, styles.white_txt]}>$400.000</Text>
-                    </View>
-                    <View style={styles.info_money_group_buttons}>
-                        <TouchableOpacity style={[styles.button_strech, { backgroundColor: '#28A745' }]}>
-                            <Text style={styles.white_txt}>Entró</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={[styles.button_strech, { backgroundColor: '#DC3545' }]}>
-                            <Text style={styles.white_txt}>Salió</Text>
-                        </TouchableOpacity>
-                    </View>
-                </ImageBackground>
-            </View>
+        <ScrollView style={styles.container}>
+            <ImageBackground source={require('../Assets/FONDO-V1.png')}
+                style={[styles.bg_img_View]}
+                imageStyle={[styles.bg_img]}>
+
+                <View style={styles.title_wallet}>
+                    <Text style={[styles.title_wallet_txt, styles.white_txt]}>Principal</Text>
+                </View>
+                <View style={styles.total}>
+                    <Text style={[styles.general_resume_txt, styles.white_txt]}>Resumen General</Text>
+                    <Text style={[styles.money_txt, styles.white_txt]}>Te deben</Text>
+                    <Text style={[styles.money_val, styles.white_txt]}>${props.deben_txt}</Text>
+                    <Text style={[styles.money_txt, styles.white_txt]}>Te debes</Text>
+                    <Text style={[styles.money_val, , styles.white_txt]}>${props.debes_txt}</Text>
+                </View>
+                <View style={styles.in_th_walet}>
+                    <Text style={[styles.money_txt, styles.white_txt]}>En esta cartera</Text>
+                    <Text style={[styles.money_val, styles.white_txt]}>$400.000</Text>
+                </View>
+                <View style={styles.info_money_group_buttons}>
+                    <TouchableOpacity style={[styles.button_strech, { backgroundColor: '#28A745' }]}>
+                        <Text style={styles.white_txt}>Entró</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={[styles.button_strech, { backgroundColor: '#DC3545' }]}>
+                        <Text style={styles.white_txt}>Salió</Text>
+                    </TouchableOpacity>
+                </View>
+            </ImageBackground>
+
             <View style={styles.list}>
-
+                <Card_Wallet style={styles.list_item} type={true} value='120.000'></Card_Wallet>
+                <Card_Wallet style={styles.list_item} type={false} value='140.000'></Card_Wallet>
+                <Card_Wallet style={styles.list_item} type={true} value='1.000'></Card_Wallet>
+                <Card_Wallet style={styles.list_item} type={false} value='70.000'></Card_Wallet>
+                <Card_Wallet style={styles.list_item} type={false} value='1.000'></Card_Wallet>
+                <Card_Wallet style={styles.list_item} type={true} value='120.000'></Card_Wallet>
+                <Card_Wallet style={styles.list_item} type={false} value='140.000'></Card_Wallet>
+                <Card_Wallet style={styles.list_item} type={true} value='1.000'></Card_Wallet>
+                <Card_Wallet style={styles.list_item} type={false} value='70.000'></Card_Wallet>
+                <Card_Wallet style={styles.list_item} type={false} value='1.000'></Card_Wallet>
+                <Card_Wallet style={styles.list_item} type={true} value='120.000'></Card_Wallet>
+                <Card_Wallet style={styles.list_item} type={false} value='140.000'></Card_Wallet>
+                <Card_Wallet style={styles.list_item} type={true} value='1.000'></Card_Wallet>
+                <Card_Wallet style={styles.list_item} type={false} value='70.000'></Card_Wallet>
+                <Card_Wallet style={styles.list_item} type={false} value='1.000'></Card_Wallet>
+                <Card_Wallet style={styles.list_item} type={true} value='120.000'></Card_Wallet>
+                <Card_Wallet style={styles.list_item} type={false} value='140.000'></Card_Wallet>
+                <Card_Wallet style={styles.list_item} type={true} value='1.000'></Card_Wallet>
+                <Card_Wallet style={styles.list_item} type={false} value='70.000'></Card_Wallet>
+                <Card_Wallet style={styles.list_item} type={false} value='1.000'></Card_Wallet>
             </View>
 
-        </View>
+        </ScrollView>
     );
 };
 const styles = StyleSheet.create(
@@ -50,20 +69,20 @@ const styles = StyleSheet.create(
         white_txt: {
             color: '#FDFBFB',
         },
-
-        bg_img: {
-            backgroundColor: '#3A97D3',
+        bg_img_View: {
             paddingTop: 34,
             paddingRight: 36,
             paddingLeft: 36,
             paddingBottom: 15,
-            borderRadius: 20,
-            resizeMode: 'cover'
         },
-        info_money: {
-            borderRadius: 20,
-            /*  backgroundColor: '#3A97D3', */
+        bg_img: {
+            /*   backgroundColor: '#3A97D3', */
+            resizeMode: 'cover',
+            borderBottomLeftRadius: 20,
+            borderBottomRightRadius: 20,
+
         },
+
         title_wallet: {
             display: 'flex',
             alignItems: 'flex-end'
@@ -107,8 +126,13 @@ const styles = StyleSheet.create(
             alignItems: 'center',
         },
         list: {
-            /*    flex: .5 */
-        }
+            alignItems: 'center',
+            paddingTop: 20,
+        },
+        list_item: {
+            width: '85%',
+            marginBottom: 10,
+        },
     }
 );
 export default Main;
