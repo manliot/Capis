@@ -10,7 +10,7 @@ const Main = (props) => {
                 imageStyle={[styles.bg_img]}>
 
                 <View style={styles.title_wallet}>
-                    <Text style={[styles.title_wallet_txt, styles.white_txt]}>Principal</Text>
+                    <Text style={[styles.title_wallet_txt, styles.white_txt]}>Principal  ▼</Text>
                 </View>
                 <View style={styles.total}>
                     <Text style={[styles.general_resume_txt, styles.white_txt]}>Resumen General</Text>
@@ -76,7 +76,6 @@ const styles = StyleSheet.create(
             paddingBottom: 15,
         },
         bg_img: {
-            /*   backgroundColor: '#3A97D3', */
             resizeMode: 'cover',
             borderBottomLeftRadius: 20,
             borderBottomRightRadius: 20,
@@ -85,7 +84,8 @@ const styles = StyleSheet.create(
 
         title_wallet: {
             display: 'flex',
-            alignItems: 'flex-end'
+            alignItems: 'flex-end',
+
         },
         title_wallet_txt: {
             fontSize: 14,

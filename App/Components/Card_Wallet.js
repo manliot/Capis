@@ -21,16 +21,21 @@ const styles = StyleSheet.create({
         borderRadius: 15
     },
     index: {
-        width: 15,
+        width: 30,
         height: 15,
-        borderBottomEndRadius: 50,
-        borderBottomStartRadius: 50
+
     },
     plus: {
-        backgroundColor: '#28A745'
+        backgroundColor: '#28A745',
+        borderBottomEndRadius: 50,
+        borderTopStartRadius: 50,
+
     },
     minus: {
-        backgroundColor: '#DC3545'
+        backgroundColor: '#DC3545',
+        borderTopEndRadius: 50,
+        borderBottomStartRadius: 50
+
     },
     money_txt: {
         color: '#6F6C6C',
