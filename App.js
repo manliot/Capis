@@ -7,14 +7,14 @@
  */
 
 import React from 'react';
+import Main from './App/Views/Main'
 
-const App: () => React$Node = () => {
+const App = () => {
   return (
-    <>
-
-    </>
+    <Main>
+    
+    </Main>
   );
 };
-
 
 export default App;
