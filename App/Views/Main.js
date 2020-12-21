@@ -1,5 +1,9 @@
 import React from 'react';
 import { StyleSheet, View, Text, TouchableOpacity, ImageBackground, ScrollView } from 'react-native'
+import { MaterialIcons, AntDesign } from 'react-native-vector-icons';
+
+
+
 import Card_Wallet from '../Components/Card_Wallet'
 
 const Main = (props) => {
@@ -10,7 +14,8 @@ const Main = (props) => {
                 imageStyle={[styles.bg_img]}>
 
                 <View style={styles.title_wallet}>
-                    <Text style={[styles.title_wallet_txt, styles.white_txt]}>Principal  ▼</Text>
+                    <Text style={[styles.title_wallet_txt, styles.white_txt]}>Principal  </Text>
+                    <MaterialIcons name="expand-more" size={30} color="#fff" />
                 </View>
                 <View style={styles.total}>
                     <Text style={[styles.general_resume_txt, styles.white_txt]}>Resumen General</Text>
@@ -21,14 +26,16 @@ const Main = (props) => {
                 </View>
                 <View style={styles.in_th_walet}>
                     <Text style={[styles.money_txt, styles.white_txt]}>En esta cartera</Text>
-                    <Text style={[styles.money_val, styles.white_txt]}>$400.000</Text>
+                    <Text style={[styles.money_val, { color: '#C2E2BE' }]}>$400.000</Text>
                 </View>
                 <View style={styles.info_money_group_buttons}>
                     <TouchableOpacity style={[styles.button_strech, { backgroundColor: '#28A745' }]}>
-                        <Text style={styles.white_txt}>Entró</Text>
+                        <AntDesign name="pluscircleo" size={15} color="#fff" />
+                        <Text style={[styles.white_txt, styles.txt_btn]}>Entró</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={[styles.button_strech, { backgroundColor: '#DC3545' }]}>
-                        <Text style={styles.white_txt}>Salió</Text>
+                        <AntDesign name="minuscircleo" size={15} color="#fff" />
+                        <Text style={[styles.white_txt, styles.txt_btn]}>Salió</Text>
                     </TouchableOpacity>
                 </View>
             </ImageBackground>
@@ -84,11 +91,12 @@ const styles = StyleSheet.create(
 
         title_wallet: {
             display: 'flex',
-            alignItems: 'flex-end',
-
+            justifyContent: 'flex-end',
+            alignItems: 'center',
+            flexDirection: 'row',
         },
         title_wallet_txt: {
-            fontSize: 14,
+            fontSize: 16,
         },
         total: {
             paddingLeft: 20
@@ -119,11 +127,15 @@ const styles = StyleSheet.create(
         },
         button_strech: {
             width: 95,
-            height: 30,
+            height: 33,
             borderRadius: 30,
             display: 'flex',
+            flexDirection: 'row',
             justifyContent: 'center',
             alignItems: 'center',
+        },
+        txt_btn: {
+            marginLeft: 7,
         },
         list: {
             alignItems: 'center',
