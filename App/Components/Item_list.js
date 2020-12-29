@@ -1,6 +1,7 @@
 import { Item } from 'native-base'
 import React from 'react'
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native'
+import { Format_number_money as fMoney } from '../Libs/Format_number'
 
 const Item_list = (props) => {
     const { type } = props
@@ -9,7 +10,7 @@ const Item_list = (props) => {
         <View style={styles.container}>
             <View style={styles.contentTop}>
                 <Text style={styles.type}>{type ? 'Le prestaste a' : 'Le debes a'}</Text>
-                <Text style={styles.value}>${value}</Text>
+                <Text style={styles.value}>{fMoney(value)}</Text>
             </View>
             <Text style={styles.name}>{name}</Text>
         </View>
@@ -20,8 +21,8 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
         paddingVertical: 10,
         backgroundColor: 'white',
-        borderRadius: 10,
-        height: 66
+        borderRadius: 5,
+        height: 60
     },
     contentTop: {
         flexDirection: 'row'

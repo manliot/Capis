@@ -17,7 +17,7 @@ const App = () => {
     /*  <Main deben_value='400.000' debes_value='100.000'>
  
      </Main> */
-    <List_pres_deu type={true} value='100.400.000' />
+    <List_pres_deu type={true} value='100400000' />
   );
 };
 

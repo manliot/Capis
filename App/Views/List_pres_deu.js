@@ -7,6 +7,9 @@ import Feather from 'react-native-vector-icons/Feather';
 
 import Item_List from "../Components/Item_list";
 
+import { Format_number_money as fMoney } from '../Libs/Format_number'
+import { Formart_date as fDate } from '../Libs/Format_date'
+
 let Fecha
 let Type
 
@@ -33,7 +36,7 @@ const HeaderMain = (props) => {
                 </View>
             </View>
             <View style={styles.total}>
-                <Text style={styles.total_txt}>{props.props.type ? 'Te deben' : 'Debes'} <Text style={styles.total_value}>${props.props.value}</Text></Text>
+                <Text style={styles.total_txt}>{props.props.type ? 'Te deben' : 'Debes'} <Text style={styles.total_value}>{fMoney(props.props.value)}</Text></Text>
             </View>
             <View style={styles.filters}>
                 <TouchableOpacity style={[styles.button_picker]}>
@@ -56,7 +59,7 @@ const ListItem = (itemObject) => {
     return (
         <View>
             {!sw &&
-                <Text style={styles.fecha}>• {fecha} •</Text>
+                <Text style={styles.fecha}>• • {fDate(fecha)} • •</Text>
             }
             <View style={styles.itemList} >
                 <Item_List type={true} itemObject={itemObject} type={Type} />
