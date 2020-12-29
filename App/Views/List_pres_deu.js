@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Text, TouchableOpacity, FlatList } from 'react-native'
+import { StyleSheet, View, Text, TouchableOpacity, FlatList, TextInput } from 'react-native'
 import { Container, Icon } from 'native-base';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Feather from 'react-native-vector-icons/Feather';
+
 
 import Item_List from "../Components/Item_list";
 
@@ -22,7 +23,12 @@ const HeaderMain = (props) => {
                 </View>
                 <View style={styles.search_View}>
                     <View style={styles.search_bar}>
-
+                        <Ionicons name='search' size={25} color="#383737" />
+                        <TextInput
+                            style={styles.search_bar_input}
+                            placeholder='Buscar'
+                            placeholderTextColor='#F0F0F0'
+                        />
                     </View>
                 </View>
             </View>
@@ -104,7 +110,12 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         flexDirection: 'row',
         height: 40,
-        backgroundColor: '#959595'
+        backgroundColor: '#959595',
+        alignItems: 'center',
+        paddingHorizontal: 10,
+    },
+    search_bar_input: {
+        color: '#F0F0F0'
     },
     total: {
         alignItems: 'flex-end',
@@ -121,6 +132,7 @@ const styles = StyleSheet.create({
     },
     total_value: {
         fontWeight: 'bold',
+        color: '#C2E2BE',
     },
     button_picker: {
         backgroundColor: 'white',
