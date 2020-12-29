@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, View, Text, TouchableOpacity, ImageBackground, ScrollView } from 'react-native'
-import { MaterialIcons, AntDesign } from 'react-native-vector-icons';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 
 
 
@@ -8,6 +9,7 @@ import Card_Wallet from '../Components/Card_Wallet'
 
 const Main = (props) => {
     return (
+
         <ScrollView style={styles.container}>
             <ImageBackground source={require('../Assets/FONDO-V1.png')}
                 style={[styles.bg_img_View]}

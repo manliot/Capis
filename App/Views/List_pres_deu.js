@@ -1,33 +1,149 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Text, TouchableOpacity, Picker } from 'react-native'
-import { Container, Button, Icon } from 'native-base';
+import { StyleSheet, View, Text, TouchableOpacity, FlatList } from 'react-native'
+import { Container, Icon } from 'native-base';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import Feather from 'react-native-vector-icons/Feather';
 
+import Item_List from "../Components/Item_list";
+
+let Fecha
+const Type = ''
+
+const DATA = [
+    {
+        id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+        name: 'Michael Fox',
+        value: '155.999',
+        fecha: '2020/04/01',
+    },
+    {
+        id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
+        name: 'Michael Jackson',
+        value: '155.999',
+        fecha: '2020/04/01',
+    },
+    {
+        id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f6',
+        name: 'Michael perez',
+        value: '155.999',
+        fecha: '2020/04/02',
+    },
+    {
+        id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f',
+        name: 'John Deacon',
+        value: '155.999',
+        fecha: '2020/04/03',
+    },
+    {
+        id: '3ac68afc-c605-48d3-a4f8-fbd91aa97',
+        name: 'Freddy Mercury',
+        value: '155.999',
+        fecha: '2020/04/03',
+    },
+    {
+        id: '3ac68afc-c605-48d3-a4f8-fbd91aa',
+        name: 'Brian May',
+        value: '155.999',
+        fecha: '2020/04/03',
+    },
+    {
+        id: '3ac68afc-c605-48d3-a4f8-fbd9',
+        name: 'Royer Tailor',
+        value: '155.999',
+        fecha: '2020/04/03',
+    },
+    {
+        id: '3ac68afc-c605-48d3-a4f8-fbd997f63',
+        name: 'Slash',
+        value: '155.999',
+        fecha: '2020/04/04',
+    },
+    {
+        id: '3ac68afc-c605-48d3-a4f8-fbd7f63',
+        name: 'Tumba',
+        value: '155.999',
+        fecha: '2020/04/04',
+    },
+    {
+        id: '3ac68afc-c65-48d3-a4f8-fbd9',
+        name: 'Royer Tailor',
+        value: '155.999',
+        fecha: '2020/04/04',
+    },
+    {
+        id: '3ac68afc-c60548d3-a4f8-fbd997f63',
+        name: 'Slash',
+        value: '155.999',
+        fecha: '2020/04/04',
+    },
+    {
+        id: '3ac68afc-c605-483-a4f8-fbd7f63',
+        name: 'Tumba',
+        value: '155.999',
+        fecha: '2020/04/04',
+    },
+];
+
+const HeaderMain = (props) => {
+    return (
+        <View style={[styles.bg_color, styles.header]}>
+            <View style={styles.header_top}>
+                <View style={styles.menu}>
+                    <TouchableOpacity style={{ marginRight: 27 }}>
+                        <Feather name='menu' size={30} color="#fff" />
+                    </TouchableOpacity>
+                </View>
+                <View style={styles.search_View}>
+                    <View style={styles.search_bar}>
+
+                    </View>
+                </View>
+            </View>
+            <View style={styles.total}>
+                <Text style={styles.total_txt}>{props.props.type ? 'Te deben' : 'Debes'} <Text style={styles.total_value}>${props.props.value}</Text></Text>
+            </View>
+            <View style={styles.filters}>
+                <TouchableOpacity style={[styles.button_picker]}>
+                    <Text>Por fecha {'>'}</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={[styles.swap_button]}>
+                    <Ionicons name="swap-vertical" size={20} color="#6F6C6C" />
+                </TouchableOpacity>
+            </View>
+        </View>
+    )
+}
+const ListItem = (itemObject) => {
+    const { fecha } = itemObject.item
+    let sw = true
+    if (fecha != Fecha) {
+        sw = false;
+        Fecha = fecha
+    }
+    return (
+        <View>
+            {!sw &&
+                <Text style={styles.fecha}>• {fecha} •</Text>
+            }
+            <View style={styles.itemList} >
+                <Item_List type={true} itemObject={itemObject} />
+            </View>
+        </View>
+    );
+}
 const List = (props) => {
     const [search, setSearch] = useState('');
     const [selected, setSelected] = useState('');
     return (
         <Container>
-
-            <View style={[styles.bg_color, styles.header]}>
-                <View style={styles.header_top}>
-                    <Button transparent>
-                        <Icon name='menu' />
-                    </Button>
-                    <Button transparent>
-                        <Icon name='menu' />
-                    </Button>
-                </View>
-                <View style={styles.total}>
-                    <Text style={styles.total_txt}>{props.type ? 'Te deben' : 'Debes'} <Text style={styles.total_value}>${props.value}</Text></Text>
-                </View>
-                <View style={styles.filters}>
-                    <TouchableOpacity style={[styles.button_strech, { backgroundColor: '#28A745' }]}>
-                        <Text>Entró</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={[styles.button_picker]}>
-
-                    </TouchableOpacity>
-                </View>
+            <HeaderMain props={props}></HeaderMain>
+            <View style={styles.flatlist_view}>
+                <FlatList
+                    data={DATA}
+                    renderItem={ListItem}
+                    keyExtractor={item => item.id}
+                    style={styles.flatlist}
+                />
             </View>
         </Container>
     );
@@ -37,23 +153,39 @@ const styles = StyleSheet.create({
         backgroundColor: '#5FABDB'
     },
     header: {
-        position: 'absolute',
+        position: 'relative',
         width: '100%',
         top: 0,
         height: 143,
         paddingRight: 22,
-        paddingLeft: 15,
+        paddingLeft: 16,
+        paddingTop: 12,
     },
     header_top: {
-        flexDirection: 'row'
+        flexDirection: 'row',
+    },
+    menu: {
+        flex: 1,
+        maxWidth: 52,
+        paddingTop: 5
+    },
+    search_View: {
+        flex: 1,
+    },
+    search_bar: {
+        borderRadius: 10,
+        flexDirection: 'row',
+        height: 40,
+        backgroundColor: '#959595'
     },
     total: {
         alignItems: 'flex-end',
-        marginTop: 17,
+        marginTop: 18,
     },
     filters: {
         flexDirection: 'row',
-        marginTop: 17,
+        marginTop: 14.54,
+        paddingLeft: 20
     },
     total_txt: {
         color: '#FDFBFB',
@@ -65,6 +197,35 @@ const styles = StyleSheet.create({
     button_picker: {
         backgroundColor: 'white',
         borderRadius: 5,
+        paddingVertical: 2,
+        paddingHorizontal: 5,
+        marginRight: 10,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    swap_button: {
+        backgroundColor: 'white',
+        borderRadius: 5,
+        width: 31.55,
+        height: 29.31,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    flatlist_view: {
+        backgroundColor: '#5FABDB',
+        flex: 1
+    },
+    flatlist: {
+        paddingHorizontal: 30,
+    },
+    fecha: {
+        marginTop: 20,
+        marginBottom: 15,
+        color: 'white',
+        textAlign: 'center',
+    },
+    itemList: {
+        marginBottom: 14,
     },
 });
 export default List;
