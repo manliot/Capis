@@ -7,7 +7,7 @@ import Feather from 'react-native-vector-icons/Feather';
 import Item_List from "../Components/Item_list";
 
 let Fecha
-const Type = ''
+let Type
 
 const DATA = [
     {
@@ -126,7 +126,7 @@ const ListItem = (itemObject) => {
                 <Text style={styles.fecha}>• {fecha} •</Text>
             }
             <View style={styles.itemList} >
-                <Item_List type={true} itemObject={itemObject} />
+                <Item_List type={true} itemObject={itemObject} type={Type} />
             </View>
         </View>
     );
@@ -134,6 +134,7 @@ const ListItem = (itemObject) => {
 const List = (props) => {
     const [search, setSearch] = useState('');
     const [selected, setSelected] = useState('');
+    Type = props.type;
     return (
         <Container>
             <HeaderMain props={props}></HeaderMain>
