@@ -6,6 +6,7 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 
 
 import Card_Wallet from '../Components/Card_Wallet'
+import FondoWale from '../Assets/Fondo.svg'
 
 const Main = (props) => {
     return (
@@ -20,6 +21,7 @@ const Main = (props) => {
                     <MaterialIcons name="expand-more" size={30} color="#fff" />
                 </View>
                 <View style={styles.total}>
+
                     <Text style={[styles.general_resume_txt, styles.white_txt]}>Resumen General</Text>
                     <Text style={[styles.money_txt, styles.white_txt]}>Te deben</Text>
                     <Text style={[styles.money_val, { color: '#9AE7AB' }]}>${props.deben_value}</Text>
@@ -43,6 +45,7 @@ const Main = (props) => {
             </ImageBackground>
 
             <View style={styles.list}>
+               
                 <Card_Wallet style={styles.list_item} type={true} value='120.000'></Card_Wallet>
                 <Card_Wallet style={styles.list_item} type={false} value='140.000'></Card_Wallet>
                 <Card_Wallet style={styles.list_item} type={true} value='1.000'></Card_Wallet>
