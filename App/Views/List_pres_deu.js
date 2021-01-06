@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { StyleSheet, View, Text, TouchableOpacity, FlatList, TextInput } from 'react-native'
-import { Container, Icon } from 'native-base';
+import { Container } from 'native-base';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Feather from 'react-native-vector-icons/Feather';
 
@@ -68,8 +68,7 @@ const ListItem = (itemObject) => {
     );
 }
 const List = (props) => {
-    const [search, setSearch] = useState('');
-    const [selected, setSelected] = useState('');
+
     Type = props.type;
     return (
         <Container>

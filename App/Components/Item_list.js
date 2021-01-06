@@ -1,6 +1,6 @@
-import { Item } from 'native-base'
+
 import React from 'react'
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native'
+import { StyleSheet, View, Text } from 'react-native'
 import { Format_number_money as fMoney } from '../Libs/Format_number'
 
 const Item_list = (props) => {

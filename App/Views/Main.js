@@ -3,6 +3,8 @@ import { StyleSheet, View, Text, TouchableOpacity, ImageBackground, ScrollView }
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
+import Logo from '../Assets/FondoMain.svg'
+
 
 
 import Card_Wallet from '../Components/Card_Wallet'
@@ -43,6 +45,10 @@ const Main = (props) => {
             </ImageBackground>
 
             <View style={styles.list}>
+                <Logo
+                    width="60"
+                    height="60"
+                />
                 <Card_Wallet style={styles.list_item} type={true} value='120.000'></Card_Wallet>
                 <Card_Wallet style={styles.list_item} type={false} value='140.000'></Card_Wallet>
                 <Card_Wallet style={styles.list_item} type={true} value='1.000'></Card_Wallet>
