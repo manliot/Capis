@@ -62,7 +62,7 @@ const ListItem = (itemObject) => {
                 <Text style={styles.fecha}>• • {fDate(fecha)} • •</Text>
             }
             <View style={styles.itemList} >
-                <Item_List type={true} itemObject={itemObject} type={Type} />
+                <Item_List  itemObject={itemObject} type={Type} />
             </View>
         </View>
     );
