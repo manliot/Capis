@@ -3,18 +3,18 @@ import { View, Dimensions } from 'react-native';
 import Svg, { Path, G } from "react-native-svg"
 
 const w = Dimensions.get('screen').width
-const Waves_Main = ({ customStyles, SVGsyle }) => {
+const Waves_Main = ({ customStyles }) => {
     return (
         <View style={customStyles}>
-            <View style={{ height: 290, }}>
+            <View style={{ height: 290, display: 'flex', alignItems: 'flex-start' }}>
                 <Svg
-                    viewBox={`0 0 ${w} ${290}`}
-                    /* preserveAspectRatio="none" */
-                    preserveAspectRatio="none"
-                    xmlSpace="none"
-                    style={[{ position: 'absolute', top: 0 }, SVGsyle]}
+                    viewBox={`0 0 412 290`}
+                    width={'100%'}
+                    height={290}
+                    preserveAspectRatio="xMinYMin slice"
+                    style={[{ position: 'relative', top: 0 }]}
                 >
-                    <G /* transform='scale(1 0.8)' */>
+                    <G >
 
                         <Path
                             d="M.08 262.58l9.74 6c9.74 5.95 29.17 18 48.77 20.25 19.4 2.29 38.91-5.3 58.23-11.25 19.59-6 39.19-10.51 58.51-8.26 19.51 2.25 38.91 11.25 58.5 12 19.43.8 38.92-6.79 58.51-6 19.35.74 38.92 9.74 58.23 9.74 19.57 0 38.91-9 48.85-13.5l9.66-4.48v-9H.08zM176.86.08H.08v258h409V.08z"

@@ -1,20 +1,21 @@
 import React from 'react';
-import { StyleSheet, View, Text, TouchableOpacity, ImageBackground, ScrollView, FlatList, Dimensions } from 'react-native'
+import { StyleSheet, View, Text, TouchableOpacity, FlatList } from 'react-native'
 
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
 
 import Waves_Main from '../Components/Waves_Main'
 import BgWallet from '../Components/BgWallet'
+import BGtotal from '../Components/BGtotal'
 
 import DATA from '../Store/Data_Main_Test'
-import Card_Wallet from '../Components/Card_Wallet'
 
+import Card_Wallet from '../Components/Card_Wallet'
 
 const ListHeaderComp = ({ deben_value, debes_value }) => {
     return (
         <View style={{ flexDirection: 'column' }}>
-            <Waves_Main customStyles={styles.svgCurve} SVGsyle={styles.svgImg} width='100%' />
+            <Waves_Main customStyles={styles.svgCurve} SVGsyle={styles.svgImg} />
             <View style={{ display: 'flex', flexDirection: 'row', width: '100%', height: 204 }}>
                 <View style={{ flex: 1 }}>
                     <View style={styles.total}>
@@ -22,17 +23,20 @@ const ListHeaderComp = ({ deben_value, debes_value }) => {
                         <Text style={[styles.money_txt, styles.white_txt]}>Te deben</Text>
                         <Text style={[styles.money_val, { color: '#9AE7AB' }]}>${deben_value}</Text>
                         <Text style={[styles.money_txt, styles.white_txt]}>Te debes</Text>
-                        <Text style={[styles.money_val, , { color: '#EFB7BD' }]}>${debes_value}</Text>
+                        <Text style={[styles.money_val, { color: '#EFB7BD' }]}>${debes_value}</Text>
                     </View>
                 </View>
                 <View style={{ flex: 1, }}>
                     <View style={styles.title_wallet}>
                         <BgWallet customStyles={styles.svgWalle} />
                         <Text style={[styles.title_wallet_txt, styles.white_txt]}>Principal{/* MAX 8 car */}</Text>
-                    </View> 
+                    </View>
                     <View style={styles.in_th_walet}>
-                        <Text style={[styles.money_txt, styles.white_txt]}>En esta cartera</Text>
-                        <Text style={[styles.money_val, { color: '#C2E2BE' }]}>$400.000</Text>
+                        <BGtotal customStyles={styles.svgWalle} />
+                        <View style={{ top: -90, }}>
+                            <Text style={[styles.money_txt, styles.white_txt, { textAlign: 'right' }]}>En esta cartera</Text>
+                            <Text style={[styles.money_val, { color: '#C2E2BE', textAlign: 'right' }]}>$400.000</Text>
+                        </View>
                     </View>
                 </View>
             </View>
@@ -70,7 +74,6 @@ const Main = (props) => {
                 style={styles.flatlist}
                 ListHeaderComponentStyle={{ marginBottom: 10, height: 290 }}
             />
-
         </View>
     );
 };
@@ -78,7 +81,6 @@ const styles = StyleSheet.create(
     {
         container: {
             display: 'flex',
-
             flex: 1,
         },
         svgCurve: {
@@ -87,10 +89,6 @@ const styles = StyleSheet.create(
         },
         svgWalle: {
             width: '100%',
-        },
-        svgImg: {
-
-
         },
         Logox: {
             position: 'absolute',
@@ -112,7 +110,6 @@ const styles = StyleSheet.create(
             resizeMode: 'cover',
             borderBottomLeftRadius: 20,
             borderBottomRightRadius: 20,
-
         },
         title_wallet: {
             display: 'flex',

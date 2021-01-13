@@ -10,7 +10,6 @@ const SvgComponent = ({ customStyles }) => {
                 <Svg
                     width={'70%'}
                     height={35}
-
                     style={[{ position: 'relative', top: 0 }]}
 
                 >
