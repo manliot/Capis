@@ -15,8 +15,8 @@ import Card_Wallet from '../Components/Card_Wallet'
 const ListHeaderComp = ({ deben_value, debes_value }) => {
     return (
         <View style={{ flexDirection: 'column' }}>
-            <Waves_Main customStyles={styles.svgCurve} SVGsyle={styles.svgImg} />
-            <View style={{ display: 'flex', flexDirection: 'row', width: '100%', height: 204 }}>
+            <Waves_Main customStyles={styles.svgCurve} />
+            <View style={{ display: 'flex', flexDirection: 'row', width: '100%', height: 204, marginBottom: 27 }}>
                 <View style={{ flex: 1 }}>
                     <View style={styles.total}>
                         <Text style={[styles.general_resume_txt, styles.white_txt]}>Resumen General</Text>
@@ -26,14 +26,14 @@ const ListHeaderComp = ({ deben_value, debes_value }) => {
                         <Text style={[styles.money_val, { color: '#EFB7BD' }]}>${debes_value}</Text>
                     </View>
                 </View>
-                <View style={{ flex: 1, }}>
+                <View style={{ flex: 1 }}>
                     <View style={styles.title_wallet}>
                         <BgWallet customStyles={styles.svgWalle} />
                         <Text style={[styles.title_wallet_txt, styles.white_txt]}>Principal{/* MAX 8 car */}</Text>
                     </View>
                     <View style={styles.in_th_walet}>
                         <BGtotal customStyles={styles.svgWalle} />
-                        <View style={{ top: -90, }}>
+                        <View style={{ top: -90, marginRight: '5%' }}>
                             <Text style={[styles.money_txt, styles.white_txt, { textAlign: 'right' }]}>En esta cartera</Text>
                             <Text style={[styles.money_val, { color: '#C2E2BE', textAlign: 'right' }]}>$400.000</Text>
                         </View>
@@ -79,10 +79,6 @@ const Main = (props) => {
 };
 const styles = StyleSheet.create(
     {
-        container: {
-            display: 'flex',
-            flex: 1,
-        },
         svgCurve: {
             position: 'absolute',
             width: '100%'
@@ -90,26 +86,8 @@ const styles = StyleSheet.create(
         svgWalle: {
             width: '100%',
         },
-        Logox: {
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-        },
         white_txt: {
             color: '#FDFBFB',
-        },
-        bg_img_View: {
-            paddingTop: 34,
-            paddingRight: 36,
-            paddingLeft: 36,
-            paddingBottom: 15,
-        },
-        bg_img: {
-            resizeMode: 'cover',
-            borderBottomLeftRadius: 20,
-            borderBottomRightRadius: 20,
         },
         title_wallet: {
             display: 'flex',
