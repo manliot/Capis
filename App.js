@@ -6,17 +6,16 @@
  * @flow strict-local
  */
 import React from 'react';
-
+import { NavigationContainer } from '@react-navigation/native'
 
 //Screens
-import Main from './App/Views/Main'
-import List_pres_deu from './App/Views/List_pres_deu'
-
 import StackNav1 from './App/Navigator/StackNav1'
 
 const App = () => {
   return (
-    <StackNav1 />
+    <NavigationContainer>
+      <StackNav1 />
+    </NavigationContainer>
   );
 };
 

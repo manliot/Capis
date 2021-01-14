@@ -7,7 +7,7 @@ const Login = ({ navigation }) => {
             <TextInput></TextInput>
             <TouchableHighlight
                 style={[{ backgroundColor: '#28A745', height: '50%', width: '50%' }]}
-                onPress={() => navigation.navigate('Main')}
+                onPress={() => navigation.navigate('In')}
             >
                 <View>
                     <Text>Login</Text>
