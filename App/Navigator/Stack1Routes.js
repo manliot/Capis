@@ -1,7 +1,7 @@
 import Login from '../Views/Login';
-import DrawerNav from '../Navigator/DrawerNav'
+import Drawer from '../Navigator/Drawer'
 
 export default {
     Login,
-    DrawerNav
+    Drawer
 }

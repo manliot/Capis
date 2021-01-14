@@ -8,12 +8,12 @@ const DrawerNav = () => {
     return (
         <Drawer.Navigator>
             <Drawer.Screen
-                name="Main"
+                name="Stack2"
                 options={{
                     headerShown: false
                 }}
             >
-                {(props) => <DrawerRoutes.Main {...props} deben_value={'400.000'} debes_value={'100.000'} />}
+                {(props) => <DrawerRoutes.Stack2 {...props} />}
             </Drawer.Screen>
             <Drawer.Screen name="AboutUs" component={DrawerRoutes.AboutUs} />
         </Drawer.Navigator>

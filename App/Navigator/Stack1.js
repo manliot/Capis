@@ -2,13 +2,12 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
 //screens
-import Routes from './StackRoutes'
+import Routes from './Stack1Routes'
 
 const Stack = createStackNavigator();
 
 const StackNav1 = () => {
     return (
-
         <Stack.Navigator>
             <Stack.Screen
                 name="Login"
@@ -19,8 +18,8 @@ const StackNav1 = () => {
                 {(props) => <Routes.Login {...props} />}
             </Stack.Screen>
             <Stack.Screen
-                name="In"
-                component={Routes.DrawerNav}
+                name="Main"
+                component={Routes.Drawer}
                 options={{
                     headerShown: false
                 }}

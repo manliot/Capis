@@ -9,18 +9,18 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native'
 
 //Screens
-import StackNav1 from './App/Navigator/StackNav1'
+import Stack1 from './App/Navigator/Stack1'
 
 const App = () => {
   return (
     <NavigationContainer>
-      <StackNav1 />
+      <Stack1 />
     </NavigationContainer>
   );
 };
 
-/*  <List_pres_deu type={true} value='100400000' /> */
 export default App;
+/*  <List_pres_deu type={true} value='100400000' /> */
 {/* */ }
 {/* <Main deben_value='400.000' debes_value='100.000'>
 

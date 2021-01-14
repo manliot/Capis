@@ -98,6 +98,7 @@ const styles = StyleSheet.create(
             top: -32.5,
             fontSize: 16,
             marginRight: '20%',
+            fontWeight:'bold'
         },
         total: {
             paddingLeft: 55,

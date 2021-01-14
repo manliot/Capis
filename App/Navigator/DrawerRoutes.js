@@ -1,7 +1,7 @@
 import AboutUs from '../Views/Aboutus';
-import Main from '../Views/Main';
+import Stack2 from './Stack2';
 
 export default {
     AboutUs,
-    Main
+    Stack2
 }
