@@ -1,15 +1,15 @@
 import * as React from "react"
 import Svg, { Path } from "react-native-svg"
 /* SVGR has dropped some elements not supported by react-native-svg: title */
-import { View, Dimensions } from 'react-native';
-const w = Dimensions.get('screen').width
+import { View } from 'react-native';
+
 
 function SvgComponent({ customStyles }) {
   return (
     <View style={[customStyles]}>
       <View style={{ height: 113.5, display: 'flex', alignItems: 'flex-end' }}>
         <Svg
-          style={[{ position: 'relative', top: 0 }]}
+          style={[{ position: 'absolute', top: 0 }]}
           width={'90%'}
           height={113.5}
           viewBox="0 0 151.5 113.5"
