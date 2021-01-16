@@ -1,110 +1,144 @@
 import React from 'react';
-import { StyleSheet, View, Text, TouchableOpacity, ImageBackground, ScrollView } from 'react-native'
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import { StyleSheet, View, Text, TouchableOpacity, FlatList } from 'react-native'
+
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import Feather from 'react-native-vector-icons/Feather';
 
+import Waves_Main from '../Components/Waves_Main'
+import BgWallet from '../Components/BgWallet'
+import BGtotal from '../Components/BGtotal'
 
+import DATA from '../Store/Data_Main_Test'
 
 import Card_Wallet from '../Components/Card_Wallet'
-import FondoWale from '../Assets/Fondo.svg'
+const ListHeaderComp = (props) => {
+    const { deben_value, debes_value, navigation } = props.props
+    return (
+        <View style={{ flexDirection: 'column', height: 290 }}>
+            <Waves_Main customStyles={styles.svgCurve} />
+            <View style={{ display: 'flex', flexDirection: 'row', width: '100%', height: 204, marginBottom: 27 }}>
+                <TouchableOpacity onPress={() => navigation.openDrawer()} style={{ position: 'absolute', top: 17, left: 15 }}>
+                    <Feather name='menu' size={30} color="#fff" />
+                </TouchableOpacity>
+                <View style={{ flex: 1 }}>
+                    <View style={styles.total}>
+                        <Text style={[styles.general_resume_txt, styles.white_txt]}>Resumen General</Text>
+                        <Text style={[styles.money_txt, styles.white_txt]}>Te deben</Text>
+                        <Text style={[styles.money_val, { color: '#9AE7AB' }]}>${deben_value}</Text>
+                        <Text style={[styles.money_txt, styles.white_txt]}>Te debes</Text>
+                        <Text style={[styles.money_val, { color: '#EFB7BD' }]}>${debes_value}</Text>
+                    </View>
+                </View>
+                <View style={{ flex: 1 }}>
+                    <View style={styles.title_wallet}>
+                        <BgWallet customStyles={styles.svgWalle} />
+                        <Text style={[styles.title_wallet_txt, styles.white_txt]}>Principal{/* MAX 8 car */}</Text>
+                    </View>
+                    <View style={styles.in_th_walet}>
+                        <BGtotal customStyles={styles.svgWalle} />
+                        <View style={{ top: -90, marginRight: '5%' }}>
+                            <Text style={[styles.money_txt, styles.white_txt, { textAlign: 'right' }]}>En esta cartera</Text>
+                            <Text style={[styles.money_val, { color: '#C2E2BE', textAlign: 'right' }]}>$400.000</Text>
+                        </View>
+                    </View>
+                </View>
+            </View>
+            <View style={[styles.info_money_group_buttons]}>
+                <TouchableOpacity style={[styles.button_strech, { backgroundColor: '#28A745', elevation: 5 }]}>
+                    <AntDesign name="pluscircleo" size={15} color="#fff" />
+                    <Text style={[styles.white_txt, styles.txt_btn]}>Entró</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={[styles.button_strech, { backgroundColor: '#DC3545', elevation: 5 }]}>
+                    <AntDesign name="minuscircleo" size={15} color="#fff" />
+                    <Text style={[styles.white_txt, styles.txt_btn]}>Salió</Text>
+                </TouchableOpacity>
+            </View>
+        </View >
+    );
+}
+/* const a = {
+    "props": {
+        "deben_value": "400.000",
+        "debes_value": "100.000",
+        "navigation": {
+            "addListener": [Function addListener],
+            "canGoBack": [Function canGoBack],
+            "closeDrawer": [Function anonymous],
+            "dangerouslyGetParent": [Function dangerouslyGetParent],
+            "dangerouslyGetState": [Function anonymous],
+            "dispatch": [Function dispatch],
+            "goBack": [Function anonymous],
+            "isFocused": [Function isFocused],
+            "jumpTo": [Function anonymous],
+            "navigate": [Function anonymous],
+            "openDrawer": [Function anonymous],
+            "pop": [Function anonymous],
+            "popToTop": [Function anonymous],
+            "push": [Function anonymous],
+            "removeListener": [Function removeListener],
+            "replace": [Function anonymous],
+            "reset": [Function anonymous],
+            "setOptions": [Function setOptions],
+            "setParams": [Function anonymous],
+            "toggleDrawer": [Function anonymous]
+        },
+        "route": {
+            "key": "Carteras-uvD59mRNuJjEJKkQKK6FN",
+            "name": "Carteras",
+            "params": undefined
+        }
+    }
+}
+ */const ListItem = (itemObject) => {
+    const { type, value } = itemObject.item
+    return (
+        <View style={{ paddingHorizontal: 30, }}>
+            <Card_Wallet style={styles.list_item} type={type} value={value}></Card_Wallet>
+        </View>
+    )
+}
 
 const Main = (props) => {
     return (
-
-        <ScrollView style={styles.container}>
-            <ImageBackground source={require('../Assets/FONDO-V1.png')}
-                style={[styles.bg_img_View]}
-                imageStyle={[styles.bg_img]}>
-
-                <View style={styles.title_wallet}>
-                    <Text style={[styles.title_wallet_txt, styles.white_txt]}>Principal  </Text>
-                    <MaterialIcons name="expand-more" size={30} color="#fff" />
-                </View>
-                <View style={styles.total}>
-
-                    <Text style={[styles.general_resume_txt, styles.white_txt]}>Resumen General</Text>
-                    <Text style={[styles.money_txt, styles.white_txt]}>Te deben</Text>
-                    <Text style={[styles.money_val, { color: '#9AE7AB' }]}>${props.deben_value}</Text>
-                    <Text style={[styles.money_txt, styles.white_txt]}>Te debes</Text>
-                    <Text style={[styles.money_val, , { color: '#EFB7BD' }]}>${props.debes_value}</Text>
-                </View>
-                <View style={styles.in_th_walet}>
-                    <Text style={[styles.money_txt, styles.white_txt]}>En esta cartera</Text>
-                    <Text style={[styles.money_val, { color: '#C2E2BE' }]}>$400.000</Text>
-                </View>
-                <View style={styles.info_money_group_buttons}>
-                    <TouchableOpacity style={[styles.button_strech, { backgroundColor: '#28A745' }]}>
-                        <AntDesign name="pluscircleo" size={15} color="#fff" />
-                        <Text style={[styles.white_txt, styles.txt_btn]}>Entró</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={[styles.button_strech, { backgroundColor: '#DC3545' }]}>
-                        <AntDesign name="minuscircleo" size={15} color="#fff" />
-                        <Text style={[styles.white_txt, styles.txt_btn]}>Salió</Text>
-                    </TouchableOpacity>
-                </View>
-            </ImageBackground>
-
-            <View style={styles.list}>
-               
-                <Card_Wallet style={styles.list_item} type={true} value='120.000'></Card_Wallet>
-                <Card_Wallet style={styles.list_item} type={false} value='140.000'></Card_Wallet>
-                <Card_Wallet style={styles.list_item} type={true} value='1.000'></Card_Wallet>
-                <Card_Wallet style={styles.list_item} type={false} value='70.000'></Card_Wallet>
-                <Card_Wallet style={styles.list_item} type={false} value='1.000'></Card_Wallet>
-                <Card_Wallet style={styles.list_item} type={true} value='120.000'></Card_Wallet>
-                <Card_Wallet style={styles.list_item} type={false} value='140.000'></Card_Wallet>
-                <Card_Wallet style={styles.list_item} type={true} value='1.000'></Card_Wallet>
-                <Card_Wallet style={styles.list_item} type={false} value='70.000'></Card_Wallet>
-                <Card_Wallet style={styles.list_item} type={false} value='1.000'></Card_Wallet>
-                <Card_Wallet style={styles.list_item} type={true} value='120.000'></Card_Wallet>
-                <Card_Wallet style={styles.list_item} type={false} value='140.000'></Card_Wallet>
-                <Card_Wallet style={styles.list_item} type={true} value='1.000'></Card_Wallet>
-                <Card_Wallet style={styles.list_item} type={false} value='70.000'></Card_Wallet>
-                <Card_Wallet style={styles.list_item} type={false} value='1.000'></Card_Wallet>
-                <Card_Wallet style={styles.list_item} type={true} value='120.000'></Card_Wallet>
-                <Card_Wallet style={styles.list_item} type={false} value='140.000'></Card_Wallet>
-                <Card_Wallet style={styles.list_item} type={true} value='1.000'></Card_Wallet>
-                <Card_Wallet style={styles.list_item} type={false} value='70.000'></Card_Wallet>
-                <Card_Wallet style={styles.list_item} type={false} value='1.000'></Card_Wallet>
-            </View>
-
-        </ScrollView>
+        <View>
+            <ListHeaderComp props={props}></ListHeaderComp>
+            <FlatList
+                data={DATA}
+                renderItem={ListItem}
+                /*    ListHeaderComponent={ListHeaderComp(props)} */
+                keyExtractor={item => item.id}
+                style={styles.flatlist}
+                ListHeaderComponentStyle={{ marginBottom: 10, height: 290 }}
+            />
+        </View>
     );
 };
 const styles = StyleSheet.create(
     {
-        container: {
-            display: 'flex',
-            backgroundColor: '#EFEDED',
-            flex: 1,
+        svgCurve: {
+            position: 'absolute',
+            width: '100%'
+        },
+        svgWalle: {
+            width: '100%',
         },
         white_txt: {
             color: '#FDFBFB',
         },
-        bg_img_View: {
-            paddingTop: 34,
-            paddingRight: 36,
-            paddingLeft: 36,
-            paddingBottom: 15,
-        },
-        bg_img: {
-            resizeMode: 'cover',
-            borderBottomLeftRadius: 20,
-            borderBottomRightRadius: 20,
-
-        },
-
         title_wallet: {
             display: 'flex',
-            justifyContent: 'flex-end',
-            alignItems: 'center',
-            flexDirection: 'row',
+            alignItems: 'flex-end',
+            marginTop: 22
         },
         title_wallet_txt: {
+            top: -32.5,
             fontSize: 16,
+            marginRight: '20%',
+            fontWeight: 'bold'
         },
         total: {
-            paddingLeft: 20
+            paddingLeft: 55,
+            marginTop: 70,
         },
         general_resume_txt: {
             fontSize: 12,
@@ -119,7 +153,7 @@ const styles = StyleSheet.create(
             fontWeight: 'bold',
         },
         in_th_walet: {
-            marginTop: -5,
+            marginTop: 23,
             paddingLeft: 20,
             display: 'flex',
             marginBottom: 18,
@@ -142,12 +176,13 @@ const styles = StyleSheet.create(
         txt_btn: {
             marginLeft: 7,
         },
-        list: {
-            alignItems: 'center',
-            paddingTop: 20,
+        flatlist: {
+            backgroundColor: '#EFEDED',
+            paddingVertical: 20,
+            height: '100%'
         },
         list_item: {
-            width: '85%',
+            width: '100%',
             marginBottom: 10,
         },
     }

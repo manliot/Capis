@@ -5,20 +5,24 @@
  * @format
  * @flow strict-local
  */
-
 import React from 'react';
-import Main from './App/Views/Main'
-import List_pres_deu from './App/Views/List_pres_deu'
+import { NavigationContainer } from '@react-navigation/native'
 
+//Screens
+import Stack1 from './App/Navigator/Stack1'
 
 const App = () => {
   return (
-
-    <Main deben_value='400.000' debes_value='100.000' />
-
+    <NavigationContainer>
+      <Stack1 />
+    </NavigationContainer>
   );
 };
 
 {/* <List_pres_deu type={true} value='100400000' /> */ }
 export default App;
+/*  <List_pres_deu type={true} value='100400000' /> */
 {/* */ }
+{/* <Main deben_value='400.000' debes_value='100.000'>
+
+</Main> */}

@@ -18,7 +18,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         paddingHorizontal: 15,
         height: 45,
-        borderRadius: 15
+        borderRadius: 15,elevation:2
+        
     },
     index: {
         width: 30,

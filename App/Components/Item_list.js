@@ -1,6 +1,6 @@
-import { Item } from 'native-base'
+
 import React from 'react'
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native'
+import { StyleSheet, View, Text } from 'react-native'
 import { Format_number_money as fMoney } from '../Libs/Format_number'
 
 const Item_list = (props) => {
@@ -21,8 +21,9 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
         paddingVertical: 10,
         backgroundColor: 'white',
-        borderRadius: 5,
-        height: 60
+        borderRadius: 15,
+        height: 60,
+        elevation: 3,
     },
     contentTop: {
         flexDirection: 'row'
@@ -36,6 +37,7 @@ const styles = StyleSheet.create({
         textAlign: 'right',
         fontSize: 16,
         color: '#383737',
+        
     },
     name: {
         color: '#65D359',
