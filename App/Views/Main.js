@@ -12,9 +12,10 @@ import DATA from '../Store/Data_Main_Test'
 
 import Card_Wallet from '../Components/Card_Wallet'
 
-const ListHeaderComp = ({ deben_value, debes_value }) => {
+const ListHeaderComp = (props) => {
+    const { deben_value, debes_value } = props.props
     return (
-        <View style={{ flexDirection: 'column' }}>
+        <View style={{ flexDirection: 'column', height: 290 }}>
             <Waves_Main customStyles={styles.svgCurve} />
             <View style={{ display: 'flex', flexDirection: 'row', width: '100%', height: 204, marginBottom: 27 }}>
                 <View style={{ flex: 1 }}>
@@ -41,11 +42,11 @@ const ListHeaderComp = ({ deben_value, debes_value }) => {
                 </View>
             </View>
             <View style={styles.info_money_group_buttons}>
-                <TouchableOpacity style={[styles.button_strech, { backgroundColor: '#28A745' }]}>
+                <TouchableOpacity style={[styles.button_strech, { backgroundColor: '#28A745', elevation: 5 }]}>
                     <AntDesign name="pluscircleo" size={15} color="#fff" />
                     <Text style={[styles.white_txt, styles.txt_btn]}>Entró</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={[styles.button_strech, { backgroundColor: '#DC3545' }]}>
+                <TouchableOpacity style={[styles.button_strech, { backgroundColor: '#DC3545', elevation: 5 }]}>
                     <AntDesign name="minuscircleo" size={15} color="#fff" />
                     <Text style={[styles.white_txt, styles.txt_btn]}>Salió</Text>
                 </TouchableOpacity>
@@ -66,10 +67,11 @@ const ListItem = (itemObject) => {
 const Main = (props) => {
     return (
         <View>
+            <ListHeaderComp props={props}></ListHeaderComp>
             <FlatList
                 data={DATA}
                 renderItem={ListItem}
-                ListHeaderComponent={ListHeaderComp(props)}
+                /*    ListHeaderComponent={ListHeaderComp(props)} */
                 keyExtractor={item => item.id}
                 style={styles.flatlist}
                 ListHeaderComponentStyle={{ marginBottom: 10, height: 290 }}
@@ -92,13 +94,13 @@ const styles = StyleSheet.create(
         title_wallet: {
             display: 'flex',
             alignItems: 'flex-end',
-            marginTop: 22,
+            marginTop: 22
         },
         title_wallet_txt: {
             top: -32.5,
             fontSize: 16,
             marginRight: '20%',
-            fontWeight:'bold'
+            fontWeight: 'bold'
         },
         total: {
             paddingLeft: 55,
@@ -141,7 +143,9 @@ const styles = StyleSheet.create(
             marginLeft: 7,
         },
         flatlist: {
-            backgroundColor: '#EFEDED'
+            backgroundColor: '#EFEDED',
+            paddingVertical:20,
+            height:'100%'
         },
         list_item: {
             width: '100%',

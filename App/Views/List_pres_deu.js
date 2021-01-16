@@ -6,6 +6,9 @@ import Feather from 'react-native-vector-icons/Feather';
 
 
 import Item_List from "../Components/Item_list";
+import HeaderBg from '../Components/BgHeader'
+import Order from '../Assets/icons/order.svg'
+import Sort from '../Assets/icons/sort.svg'
 
 import { Format_number_money as fMoney } from '../Libs/Format_number'
 import { Formart_date as fDate } from '../Libs/Format_date'
@@ -18,33 +21,36 @@ import DATA from '../Store/Data_test'
 const HeaderMain = (props) => {
     return (
         <View style={[styles.bg_color, styles.header]}>
-            <View style={styles.header_top}>
-                <View style={styles.menu}>
-                    <TouchableOpacity style={{ marginRight: 27 }}>
-                        <Feather name='menu' size={30} color="#fff" />
-                    </TouchableOpacity>
-                </View>
-                <View style={styles.search_View}>
-                    <View style={styles.search_bar}>
-                        <Ionicons name='search' size={25} color="#383737" />
-                        <TextInput
-                            style={styles.search_bar_input}
-                            placeholder='Buscar'
-                            placeholderTextColor='#F0F0F0'
-                        />
+            <HeaderBg customStyles={{ width: '100%' }}></HeaderBg>
+            <View style={{ position: 'absolute', width: '100%' }}>
+                <View style={styles.header_top}>
+                    <View style={styles.menu}>
+                        <TouchableOpacity style={{ marginRight: 27 }}>
+                            <Feather name='menu' size={30} color="#fff" />
+                        </TouchableOpacity>
+                    </View>
+                    <View style={styles.search_View}>
+                        <View style={styles.search_bar}>
+                            <Ionicons name='search' size={25} color="#fff" />
+                            <TextInput
+                                style={styles.search_bar_input}
+                                placeholder='Buscar'
+                                placeholderTextColor='#F0F0F0'
+                            />
+                        </View>
+                    </View>
+                    <View style={styles.filters}>
+                        <TouchableOpacity style={[styles.button_picker, { marginRight: 10 }]}>
+                            <Order width={25} height={20} fill={"#6F6C6C"} />
+                        </TouchableOpacity>
+                        <TouchableOpacity style={[styles.button_picker]}>
+                            <Sort width={20} height={25} fill={"#6F6C6C"} />
+                        </TouchableOpacity>
                     </View>
                 </View>
-            </View>
-            <View style={styles.total}>
-                <Text style={styles.total_txt}>{props.props.type ? 'Te deben' : 'Debes'} <Text style={styles.total_value}>{fMoney(props.props.value)}</Text></Text>
-            </View>
-            <View style={styles.filters}>
-                <TouchableOpacity style={[styles.button_picker]}>
-                    <Text>Por fecha {'>'}</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={[styles.swap_button]}>
-                    <Ionicons name="swap-vertical" size={20} color="#6F6C6C" />
-                </TouchableOpacity>
+                <View style={styles.total}>
+                    <Text style={styles.total_txt}>{props.props.type ? 'Te deben' : 'Debes'} <Text style={styles.total_value}>{fMoney(props.props.value)}</Text></Text>
+                </View>
             </View>
         </View>
     )
@@ -62,13 +68,12 @@ const ListItem = (itemObject) => {
                 <Text style={styles.fecha}>• • {fDate(fecha)} • •</Text>
             }
             <View style={styles.itemList} >
-                <Item_List  itemObject={itemObject} type={Type} />
+                <Item_List itemObject={itemObject} type={Type} />
             </View>
         </View>
     );
 }
 const List = (props) => {
-
     Type = props.type;
     return (
         <Container>
@@ -86,24 +91,21 @@ const List = (props) => {
 }
 const styles = StyleSheet.create({
     bg_color: {
-        backgroundColor: '#5FABDB'
+        backgroundColor: '#EFEDED'
     },
     header: {
-        position: 'relative',
-        width: '100%',
-        top: 0,
-        height: 143,
-        paddingRight: 22,
-        paddingLeft: 16,
-        paddingTop: 12,
+        height: 123.84,
+        display: 'flex',
     },
     header_top: {
         flexDirection: 'row',
+        alignItems: 'center',
+        marginTop: 17
     },
     menu: {
         flex: 1,
         maxWidth: 52,
-        paddingTop: 5
+        marginLeft: 15
     },
     search_View: {
         flex: 1,
@@ -111,8 +113,8 @@ const styles = StyleSheet.create({
     search_bar: {
         borderRadius: 10,
         flexDirection: 'row',
-        height: 40,
-        backgroundColor: '#959595',
+        height: 35,
+        backgroundColor: '#20638F',
         alignItems: 'center',
         paddingHorizontal: 10,
     },
@@ -122,11 +124,11 @@ const styles = StyleSheet.create({
     total: {
         alignItems: 'flex-end',
         marginTop: 18,
+        marginRight: 25
     },
     filters: {
         flexDirection: 'row',
-        marginTop: 14.54,
-        paddingLeft: 20
+        marginHorizontal: 10
     },
     total_txt: {
         color: '#FDFBFB',
@@ -138,10 +140,9 @@ const styles = StyleSheet.create({
     },
     button_picker: {
         backgroundColor: 'white',
-        borderRadius: 5,
-        paddingVertical: 2,
-        paddingHorizontal: 5,
-        marginRight: 10,
+        borderRadius: 10,
+        width: 32,
+        height: 30,
         justifyContent: 'center',
         alignItems: 'center'
     },
@@ -154,16 +155,17 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     flatlist_view: {
-        backgroundColor: '#5FABDB',
+        backgroundColor: '#EFEDED',
         flex: 1
     },
     flatlist: {
         paddingHorizontal: 30,
+        paddingBottom: 30
     },
     fecha: {
         marginTop: 20,
         marginBottom: 15,
-        color: 'white',
+        color: '#757171',
         textAlign: 'center',
     },
     itemList: {
