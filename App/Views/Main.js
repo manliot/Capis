@@ -44,7 +44,7 @@ const ListHeaderComp = (props) => {
                     </View>
                 </View>
             </View>
-            <View style={styles.info_money_group_buttons}>
+            <View style={[styles.info_money_group_buttons]}>
                 <TouchableOpacity style={[styles.button_strech, { backgroundColor: '#28A745', elevation: 5 }]}>
                     <AntDesign name="pluscircleo" size={15} color="#fff" />
                     <Text style={[styles.white_txt, styles.txt_btn]}>Entró</Text>

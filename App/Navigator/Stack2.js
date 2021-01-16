@@ -25,6 +25,15 @@ const StackNav2 = (props) => {
             >
                 {(props) => <Stack2Routes.Nuevo {...props} />}
             </Stack.Screen>
+
+            <Stack.Screen
+                name="Detalles"
+                options={{
+                    headerShown: false
+                }}
+            >
+                {(props) => <Stack2Routes.Detalles {...props} />}
+            </Stack.Screen>
         </Stack.Navigator>
 
     )

@@ -10,6 +10,7 @@ import HeaderBg from '../Components/BgHeader'
 import Order from '../Assets/icons/order.svg'
 import Sort from '../Assets/icons/sort.svg'
 
+
 import { Format_number_money as fMoney } from '../Libs/Format_number'
 import { Formart_date as fDate } from '../Libs/Format_date'
 
@@ -20,7 +21,7 @@ import DATA from '../Store/Data_test'
 
 const HeaderMain = (props) => {
     const { navigation } = props.props
-  
+
     return (
         <View style={[styles.bg_color, styles.header]}>
             <HeaderBg customStyles={{ width: '100%' }}></HeaderBg>
@@ -79,14 +80,17 @@ const List = (props) => {
     Type = props.type;
     return (
         <Container>
-            <HeaderMain props={props}></HeaderMain>
-            <View style={styles.flatlist_view}>
-                <FlatList
-                    data={DATA}
-                    renderItem={ListItem}
-                    keyExtractor={item => item.id}
-                    style={styles.flatlist}
-                />
+            <View style={{ flex: 1 }}>
+                <HeaderMain props={props}></HeaderMain>
+                <View style={styles.flatlist_view}>
+                    <FlatList
+                        data={DATA}
+                        renderItem={ListItem}
+                        keyExtractor={item => item.id}
+                        style={styles.flatlist}
+                    />
+                </View>
+
             </View>
         </Container>
     );
