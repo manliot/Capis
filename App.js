@@ -19,6 +19,7 @@ const App = () => {
   );
 };
 
+{/* <List_pres_deu type={true} value='100400000' /> */ }
 export default App;
 /*  <List_pres_deu type={true} value='100400000' /> */
 {/* */ }

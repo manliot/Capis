@@ -11,7 +11,6 @@ import BGtotal from '../Components/BGtotal'
 import DATA from '../Store/Data_Main_Test'
 
 import Card_Wallet from '../Components/Card_Wallet'
-
 const ListHeaderComp = (props) => {
     const { deben_value, debes_value, navigation } = props.props
     return (
