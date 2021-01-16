@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, View, Text, TouchableOpacity, FlatList } from 'react-native'
 
 import AntDesign from 'react-native-vector-icons/AntDesign';
-
+import Feather from 'react-native-vector-icons/Feather';
 
 import Waves_Main from '../Components/Waves_Main'
 import BgWallet from '../Components/BgWallet'
@@ -13,11 +13,14 @@ import DATA from '../Store/Data_Main_Test'
 import Card_Wallet from '../Components/Card_Wallet'
 
 const ListHeaderComp = (props) => {
-    const { deben_value, debes_value } = props.props
+    const { deben_value, debes_value, navigation } = props.props
     return (
         <View style={{ flexDirection: 'column', height: 290 }}>
             <Waves_Main customStyles={styles.svgCurve} />
             <View style={{ display: 'flex', flexDirection: 'row', width: '100%', height: 204, marginBottom: 27 }}>
+                <TouchableOpacity onPress={() => navigation.openDrawer()} style={{ position: 'absolute', top: 17, left: 15 }}>
+                    <Feather name='menu' size={30} color="#fff" />
+                </TouchableOpacity>
                 <View style={{ flex: 1 }}>
                     <View style={styles.total}>
                         <Text style={[styles.general_resume_txt, styles.white_txt]}>Resumen General</Text>
@@ -54,8 +57,40 @@ const ListHeaderComp = (props) => {
         </View >
     );
 }
-
-const ListItem = (itemObject) => {
+/* const a = {
+    "props": {
+        "deben_value": "400.000",
+        "debes_value": "100.000",
+        "navigation": {
+            "addListener": [Function addListener],
+            "canGoBack": [Function canGoBack],
+            "closeDrawer": [Function anonymous],
+            "dangerouslyGetParent": [Function dangerouslyGetParent],
+            "dangerouslyGetState": [Function anonymous],
+            "dispatch": [Function dispatch],
+            "goBack": [Function anonymous],
+            "isFocused": [Function isFocused],
+            "jumpTo": [Function anonymous],
+            "navigate": [Function anonymous],
+            "openDrawer": [Function anonymous],
+            "pop": [Function anonymous],
+            "popToTop": [Function anonymous],
+            "push": [Function anonymous],
+            "removeListener": [Function removeListener],
+            "replace": [Function anonymous],
+            "reset": [Function anonymous],
+            "setOptions": [Function setOptions],
+            "setParams": [Function anonymous],
+            "toggleDrawer": [Function anonymous]
+        },
+        "route": {
+            "key": "Carteras-uvD59mRNuJjEJKkQKK6FN",
+            "name": "Carteras",
+            "params": undefined
+        }
+    }
+}
+ */const ListItem = (itemObject) => {
     const { type, value } = itemObject.item
     return (
         <View style={{ paddingHorizontal: 30, }}>
@@ -144,8 +179,8 @@ const styles = StyleSheet.create(
         },
         flatlist: {
             backgroundColor: '#EFEDED',
-            paddingVertical:20,
-            height:'100%'
+            paddingVertical: 20,
+            height: '100%'
         },
         list_item: {
             width: '100%',

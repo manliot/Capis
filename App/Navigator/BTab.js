@@ -8,7 +8,8 @@ import PrestamosIcon from '../Assets/icons/PrestamosIcon.svg'
 
 const Tab = createBottomTabNavigator();
 
-function BTab() {
+function BTab(props) {
+   
     return (
         <Tab.Navigator initialRouteName='Carteras'
             screenOptions={({ route }) => ({

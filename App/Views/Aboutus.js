@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, Text } from 'react-native'
 
-const Aboutus = () => {
+const Aboutus = ({ navigation }) => {
     return (
         <View>
             <Text>About Us</Text>

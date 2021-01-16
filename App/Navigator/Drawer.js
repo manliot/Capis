@@ -4,7 +4,7 @@ import DrawerRoutes from './DrawerRoutes'
 
 const Drawer = createDrawerNavigator();
 
-const DrawerNav = () => {
+const DrawerNav = (props) => {
     return (
         <Drawer.Navigator>
             <Drawer.Screen

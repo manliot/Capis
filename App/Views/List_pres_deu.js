@@ -19,13 +19,15 @@ let Type
 import DATA from '../Store/Data_test'
 
 const HeaderMain = (props) => {
+    const { navigation } = props.props
+  
     return (
         <View style={[styles.bg_color, styles.header]}>
             <HeaderBg customStyles={{ width: '100%' }}></HeaderBg>
             <View style={{ position: 'absolute', width: '100%' }}>
                 <View style={styles.header_top}>
                     <View style={styles.menu}>
-                        <TouchableOpacity style={{ marginRight: 27 }}>
+                        <TouchableOpacity onPress={() => navigation.openDrawer()} style={{ marginRight: 27 }}>
                             <Feather name='menu' size={30} color="#fff" />
                         </TouchableOpacity>
                     </View>

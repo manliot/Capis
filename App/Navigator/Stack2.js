@@ -6,7 +6,7 @@ import Stack2Routes from './Stack2Routes'
 
 const Stack = createStackNavigator();
 
-const StackNav2 = () => {
+const StackNav2 = (props) => {
     return (
         <Stack.Navigator>
             <Stack.Screen
