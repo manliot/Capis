@@ -41,7 +41,7 @@ const Fab = ({ navigation }) => {
                         />
                     ),
                     label: 'Nueva Deuda',
-                    onPress: () => navigation.navigate('Detalles'),
+                    onPress: () => navigation.navigate('Nuevo', { type: false }),
                 },
                 {
                     icon: ({ size, color }) => (
@@ -52,12 +52,11 @@ const Fab = ({ navigation }) => {
                         />
                     ),
                     label: 'Nuevo Prestamo',
-                    onPress: () => navigation.navigate('Nuevo'),
+                    onPress: () => navigation.navigate('Nuevo', { type: true }),
                 },
             ]}
             onStateChange={() => { setOpen(!open) }}
             onPress={() => {
-                console.log('try')
                 if (open) {
 
                     // do something if the speed dial is open
