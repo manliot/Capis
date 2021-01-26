@@ -2,7 +2,8 @@
 <p align="center">
  <img src="./App/Assets/LogoLetras.svg" alt="Logo" width="200"/>
 </p>
-# Capis: Lleva el control de tu dinero!
+# Capis
+Lleva el control de tu dinero!
 
 ✓ Ten una lista de lo que prestas y lo que debes.
 ✓ Puedes tener diferentes carteras.
