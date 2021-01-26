@@ -1,5 +1,7 @@
-<img src="./App/Assets/LogoLetras.svg" alt="Logo" width="200"/>
 
+<p align="center">
+ <img src="./App/Assets/LogoLetras.svg" alt="Logo" width="200"/>
+</p>
 # Capis: Lleva el control de tu dinero!
 
 ✓ Ten una lista de lo que prestas y lo que debes.
@@ -11,6 +13,7 @@ Caplist es una app desarrollada en React native que tiene como función principa
 
 
 ## Capturas  🖼️
+
 
 ## Construido con 🛠️
 
