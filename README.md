@@ -1,5 +1,5 @@
 # Capis
 
 
-<img src="./App/Assets/LogoNew.svg" alt="Logo" width="200"/>
+<img src="./App/Assets/LogoLetras.svg" alt="Logo" width="200"/>
 
