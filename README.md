@@ -1,4 +1,5 @@
 # Capis
 
-![Alt text](./App/Assets/LogoNew.svg =250x)
+
+<img src="./App/Assets/LogoNew.svg" alt="Logo" width="200"/>
 
