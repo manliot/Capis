@@ -1,3 +1,4 @@
 # Capis
 
-![Image text](/App/Assets/LogoNe.svg)
+![Alt text](./App/Assets/LogoNew.svg)
+![Image text](/App/Assets/LogoNew.svg)
