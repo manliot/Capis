@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "33058736268",
+    "project_id": "capis-b180f",
+    "storage_bucket": "capis-b180f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:33058736268:android:ea8d296b346ee9fe8a53a9",
+        "android_client_info": {
+          "package_name": "com.capis"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "33058736268-jlki92654tlhos6kk5vt26cpr5t0deq4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.capis",
+            "certificate_hash": "a0dac7b30a165a53e28291ba7c4186cdf574a798"
+          }
+        },
+        {
+          "client_id": "33058736268-brr7ika8q24bt487j48r99h2hua0mq79.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhY9CpibsFIZ4piaKOFu2baoeZryy7uVg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "33058736268-brr7ika8q24bt487j48r99h2hua0mq79.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

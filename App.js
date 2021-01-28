@@ -7,15 +7,26 @@
  */
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native'
+import { AuthProvider } from './firebase/AuthProvider'
+import { GoogleSignin } from '@react-native-community/google-signin';
+
 
 //Screens
 import Stack1 from './App/Navigator/Stack1'
 
+
 const App = () => {
+
+  GoogleSignin.configure({
+    webClientId: '33058736268-brr7ika8q24bt487j48r99h2hua0mq79.apps.googleusercontent.com',
+  });
+
   return (
-    <NavigationContainer>
-      <Stack1 />
-    </NavigationContainer>
+    <AuthProvider>
+      <NavigationContainer>
+        <Stack1 />
+      </NavigationContainer>
+    </AuthProvider>
   );
 };
 

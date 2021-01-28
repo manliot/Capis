@@ -1,9 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { View, Text, TouchableOpacity, Image } from 'react-native'
 
 import BgLogin from '../Components/BgLogin'
 import Brand from '../Assets/LogoLetras.svg'
+import { AuthContext } from '../../firebase/AuthProvider'
+/* import { SingInWithGoogle } from '../../firebase/Services/Auth' */
+
 const Login = ({ navigation }) => {
+    const { loginWithGoogle } = useContext(AuthContext);
+    const singInGoogle = async () => {
+        const user = await loginWithGoogle()
+        console.log(user)
+        navigation.navigate('Main')
+        /*   const user = SingInWithGoogle */
+    }
     return (
         <View style={{ display: 'flex', flex: 1, backgroundColor: '#EFEDED' }}>
             <BgLogin customStyles={{ height: '80%', position: 'relative' }} ></BgLogin>
@@ -23,7 +33,7 @@ const Login = ({ navigation }) => {
             <View style={{ justifyContent: 'center', flex: 1, alignItems: 'center' }}>
                 <TouchableOpacity
                     style={[{ display: 'flex' }]}
-                    onPress={() => navigation.navigate('Main')}
+                    onPress={() => singInGoogle()}
                 >
                     <View style={{ flexDirection: 'row', alignContent: 'center', justifyContent: 'center' }}>
                         <Image style={{ height: 50, width: 50 }} source={require('../Assets/GoogleBrand.png')} />
