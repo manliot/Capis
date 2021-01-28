@@ -16,10 +16,10 @@ Caplist es una app desarrollada en React native que tiene como función principa
 ## Capturas  🖼️
 
 <p align="center">
- <img src="./Mocks/Login.jpg" alt="Login.jpg" width="300"/>
- <img src="./Mocks/Carteras.jpg" alt="carteras.jpg" width="300"/>
- <img src="./Mocks/Misprestamos.jpg" alt="misprestamos.jpg" width="300"/>
- <img src="./Mocks/Nueva deuda.jpg" alt="Nueva deuda.jpg" width="300"/>
+ <img src="./Mocks/Login.jpg" alt="Login.jpg" width="200"/>
+ <img src="./Mocks/Carteras.jpg" alt="carteras.jpg" width="200"/>
+ <img src="./Mocks/Misprestamos.jpg" alt="misprestamos.jpg" width="200"/>
+ <img src="./Mocks/Nueva deuda.jpg" alt="Nueva deuda.jpg" width="200"/>
 </p>
 
 ## Construido con 🛠️
