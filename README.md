@@ -6,8 +6,11 @@
 
 Lleva el control de tu dinero!
 
+
 ✓ Ten una lista de lo que prestas y lo que debes.
+
 ✓ Puedes tener diferentes carteras.
+
 ✓ Controla lo que entra y lo que sale de tus carteras.
 
 
