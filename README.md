@@ -7,11 +7,11 @@
 Lleva el control de tu dinero!
 
 
-✓ Ten una lista de lo que prestas y lo que debes.
+✅ Ten una lista de lo que prestas y lo que debes.
 
-✓ Puedes tener diferentes carteras.
+✅ Puedes tener diferentes carteras.
 
-✓ Controla lo que entra y lo que sale de tus carteras.
+✅ Controla lo que entra y lo que sale de tus carteras.
 
 
 Caplist es una app desarrollada en React native que tiene como función principal ayudar a llevar un control de el dinero que prestas y el que te prestan por medio de listas. Adicionalmente puedes tener diferentes carteras y registrar todos los movimientos (dinero que entra y sale) de esta.
