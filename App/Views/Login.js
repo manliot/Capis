@@ -1,18 +1,18 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { View, Text, TouchableOpacity, Image } from 'react-native'
 
 import BgLogin from '../Components/BgLogin'
 import Brand from '../Assets/LogoLetras.svg'
-import { AuthContext } from '../../firebase/AuthProvider'
-/* import { SingInWithGoogle } from '../../firebase/Services/Auth' */
+
+import { loginWithGoogle } from '../../firebase/Services/GoogleAuth'
 
 const Login = ({ navigation }) => {
-    const { loginWithGoogle } = useContext(AuthContext);
     const singInGoogle = async () => {
         const user = await loginWithGoogle()
         console.log(user)
+
         navigation.navigate('Main')
-        /*   const user = SingInWithGoogle */
+
     }
     return (
         <View style={{ display: 'flex', flex: 1, backgroundColor: '#EFEDED' }}>
