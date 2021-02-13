@@ -48,6 +48,6 @@ Ahora ya puedes ejecutar el proyecto.
 Para android...
 $ npm run android
 
-Para ios...
-$ npm run ios
+Para ios... [working]<----------
+$ npm run ios 
 ```
