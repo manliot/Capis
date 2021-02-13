@@ -2,7 +2,6 @@ import React from 'react';
 import { View, Dimensions } from 'react-native';
 import Svg, { Path, G } from "react-native-svg"
 
-const w = Dimensions.get('screen').width
 const Waves_Main = ({ customStyles }) => {
     return (
         <View style={customStyles}>

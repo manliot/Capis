@@ -4,10 +4,7 @@ import { View, Dimensions } from 'react-native'
 /* SVGR has dropped some elements not supported by react-native-svg: title */
 
 const w = Dimensions.get('screen').width
-const h = Dimensions.get('screen').height
-
 function SvgComponent({ customStyles }) {
-    console.log(w)
     return (
         <View style={[customStyles]}>
             <View style={{ height: '100%' }}>

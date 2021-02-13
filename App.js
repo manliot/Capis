@@ -18,7 +18,6 @@ import AuthStack from './App/Navigator/AuthStack'
 const App = () => {
   GoogleConfig()
   return (
-
     < NavigationContainer >
       <AuthStack />
     </NavigationContainer >
