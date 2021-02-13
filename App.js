@@ -7,11 +7,11 @@
  */
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native'
-import { AuthProvider } from './firebase/AuthProvider'
+import { Provider } from 'react-redux'
+
 
 import GoogleConfig from './firebase/GoogleConfig'
-
-//Screens
+//Navigation
 import AuthStack from './App/Navigator/AuthStack'
 
 
