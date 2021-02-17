@@ -16,6 +16,7 @@ const DrawerNav = (props) => {
                 {(props) => <DrawerRoutes.Stack2 {...props} />}
             </Drawer.Screen>
             <Drawer.Screen name="AboutUs" component={DrawerRoutes.AboutUs} />
+            <Drawer.Screen name="Salir" component={DrawerRoutes.Logout}/>
         </Drawer.Navigator>
     )
 }

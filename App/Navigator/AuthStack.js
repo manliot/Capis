@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux'
 import { createStackNavigator } from '@react-navigation/stack';
 
 //screens
@@ -7,23 +8,27 @@ import Routes from './Stack1Routes'
 const Stack = createStackNavigator();
 
 const StackNav1 = () => {
+    const { user } = useSelector(state => state.user)
     return (
         <Stack.Navigator>
-            <Stack.Screen
-                name="Login"
-                options={{
-                    headerShown: false
-                }}
-            >
-                {(props) => <Routes.Login {...props} />}
-            </Stack.Screen>
-            <Stack.Screen
-                name="Main"
-                component={Routes.Drawer}
-                options={{
-                    headerShown: false
-                }}
-            />
+            {user ?
+                <Stack.Screen
+                    name="Main"
+                    component={Routes.Drawer}
+                    options={{
+                        headerShown: false
+                    }}
+                />
+                :
+                <Stack.Screen
+                    name="Login"
+                    options={{
+                        headerShown: false
+                    }}
+                >
+                    {(props) => <Routes.Login {...props} />}
+                </Stack.Screen>
+            }
         </Stack.Navigator>
     )
 }

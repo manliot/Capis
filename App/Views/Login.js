@@ -18,7 +18,6 @@ const Login = ({ navigation }) => {
             photoURL: user.photoURL,
             id: user.uid
         }))
-        navigation.navigate('Main')
     }
     return (
         <View style={{ display: 'flex', flex: 1, backgroundColor: '#EFEDED' }}>
