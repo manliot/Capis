@@ -17,10 +17,4 @@ const slice = createSlice({
 export const { loginSuccess, logoutSuccess } = slice.actions
 export default slice.reducer
 
-export const login = ({ user }) => async dispatch => {
-    try {
-        dispatch(loginSuccess({ username }));
-    } catch (e) {
-        return console.error(e.message);
-    }
-}
+
