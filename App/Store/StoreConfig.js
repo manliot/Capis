@@ -1,11 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { combineReducers } from 'redux'
 
-const reducer=combineReducers({
+//reducers
+import user from './features/User'
 
+const reducer = combineReducers({
+    user
 })
 
-const store=configureStore({
+const store = configureStore({
     reducer,
 })
 

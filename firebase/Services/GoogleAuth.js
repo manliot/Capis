@@ -1,7 +1,5 @@
-import React from 'react'
 import auth from '@react-native-firebase/auth'
 import { GoogleSignin } from '@react-native-community/google-signin';
-
 
 export const loginWithGoogle = async () => {
     try {

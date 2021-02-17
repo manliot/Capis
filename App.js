@@ -13,14 +13,17 @@ import { Provider } from 'react-redux'
 import GoogleConfig from './firebase/GoogleConfig'
 //Navigation
 import AuthStack from './App/Navigator/AuthStack'
-
+//store
+import store from './App/Store/StoreConfig'
 
 const App = () => {
   GoogleConfig()
   return (
-    < NavigationContainer >
-      <AuthStack />
-    </NavigationContainer >
+    <Provider store={store}>
+      < NavigationContainer >
+        <AuthStack />
+      </NavigationContainer >
+    </Provider>
 
   );
 };

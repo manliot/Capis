@@ -1,10 +1,13 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { useSelector } from 'react-redux'
+import { View, Text, Image } from 'react-native'
 
 const Aboutus = ({ navigation }) => {
+    const user = useSelector(state => state.user.user)
     return (
         <View>
-            <Text>About Us</Text>
+            <Image style={{ width: 100, height: 100, borderRadius: 50 }} source={{ uri: user.photoURL }} />
+            <Text>Hola {user.displayName}</Text>
         </View>
     )
 }

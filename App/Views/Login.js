@@ -1,18 +1,24 @@
 import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { View, Text, TouchableOpacity, Image } from 'react-native'
 
 import BgLogin from '../Components/BgLogin'
 import Brand from '../Assets/LogoLetras.svg'
 
 import { loginWithGoogle } from '../../firebase/Services/GoogleAuth'
+import { loginSuccess } from '../Store/features/User'
 
 const Login = ({ navigation }) => {
+    const dispatch = useDispatch()
     const singInGoogle = async () => {
-        const user = await loginWithGoogle()
-        console.log(user)
-
+        const { user } = await loginWithGoogle()
+        await dispatch(loginSuccess({
+            displayName: user.displayName,
+            email: user.email,
+            photoURL: user.photoURL,
+            id: user.uid
+        }))
         navigation.navigate('Main')
-
     }
     return (
         <View style={{ display: 'flex', flex: 1, backgroundColor: '#EFEDED' }}>
