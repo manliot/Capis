@@ -3,28 +3,21 @@ import { StyleSheet, View, Text, TouchableOpacity, FlatList, TextInput } from 'r
 import { Container } from 'native-base';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Feather from 'react-native-vector-icons/Feather';
-
-
 import Item_List from "../Components/Item_list";
 import HeaderBg from '../Components/BgHeader'
 import Order from '../Assets/icons/order.svg'
 import Sort from '../Assets/icons/sort.svg'
-
-
 import { Format_number_money as fMoney } from '../Libs/Format_number'
 import { Formart_date as fDate } from '../Libs/Format_date'
+import DATA from '../Store/Data_test'
 
 let Fecha
 let Type
-
-import DATA from '../Store/Data_test'
-
 const HeaderMain = (props) => {
     const { navigation } = props.props
-
     return (
         <View style={[styles.bg_color, styles.header]}>
-            <HeaderBg customStyles={{ width: '100%' }}></HeaderBg>
+            <HeaderBg customStyles={{ width: '100%' }} />
             <View style={{ position: 'absolute', width: '100%' }}>
                 <View style={styles.header_top}>
                     <View style={styles.menu}>

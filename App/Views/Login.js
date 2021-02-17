@@ -1,12 +1,11 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { View, Text, TouchableOpacity, Image } from 'react-native'
-
+import { loginWithGoogle } from '../../firebase/Services/GoogleAuth'
+import { loginSuccess } from '../Store/features/User'
 import BgLogin from '../Components/BgLogin'
 import Brand from '../Assets/LogoLetras.svg'
 
-import { loginWithGoogle } from '../../firebase/Services/GoogleAuth'
-import { loginSuccess } from '../Store/features/User'
 
 const Login = ({ navigation }) => {
     const dispatch = useDispatch()

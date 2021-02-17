@@ -36,8 +36,7 @@ const styles = StyleSheet.create({
         flex: 1,
         textAlign: 'right',
         fontSize: 16,
-        color: '#383737',
-        
+        color: '#383737',        
     },
     name: {
         color: '#65D359',

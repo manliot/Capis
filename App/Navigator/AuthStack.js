@@ -1,12 +1,10 @@
 import React from 'react';
 import { useSelector } from 'react-redux'
 import { createStackNavigator } from '@react-navigation/stack';
-
 //screens
 import Routes from './Stack1Routes'
 
 const Stack = createStackNavigator();
-
 const StackNav1 = () => {
     const { user } = useSelector(state => state.user)
     return (

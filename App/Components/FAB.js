@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import { FAB as F } from 'react-native-paper';
-
 import PrestamosIcon from '../Assets/icons/PrestamosIcon.svg'
 import DeudasIcon from '../Assets/icons/DeudasIcon.svg'
 import WalletIcon from '../Assets/icons/WalletsIcon.svg'
 
 const Fab = ({ navigation }) => {
     const [open, setOpen] = useState(false)
-
     return (
         <F.Group
             open={open}

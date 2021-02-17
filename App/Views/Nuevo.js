@@ -1,14 +1,12 @@
 import React from 'react'
 import { View, Text, TextInput, StyleSheet, TouchableOpacity, ScrollView, Dimensions } from 'react-native'
-
 import Feather from 'react-native-vector-icons/Ionicons';
 import Bg from '../Components/BgLogin'
 import Brand from '../Assets/LogoNew.svg'
-
 const h = Dimensions.get('window').height
+
 const Nuevo = ({ route, navigation }) => {
     const { type } = route.params
-    console.log(type)
     return (
         <View style={{ flex: 1, backgroundColor: "#EFEDED" }}>
             <Bg customStyles={{ height: h + 100, width: '100%', position: 'relative' }} ></Bg>
@@ -43,7 +41,6 @@ const Nuevo = ({ route, navigation }) => {
         </View>
     )
 }
-
 const styles = StyleSheet.create({
     textInput: {
         backgroundColor: '#ffff',
@@ -60,5 +57,4 @@ const styles = StyleSheet.create({
         borderRadius: 300,
     }
 })
-
 export default Nuevo

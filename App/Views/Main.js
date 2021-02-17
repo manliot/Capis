@@ -1,16 +1,13 @@
 import React from 'react';
 import { StyleSheet, View, Text, TouchableOpacity, FlatList } from 'react-native'
-
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Feather from 'react-native-vector-icons/Feather';
-
 import Waves_Main from '../Components/Waves_Main'
 import BgWallet from '../Components/BgWallet'
 import BGtotal from '../Components/BGtotal'
-
 import DATA from '../Store/Data_Main_Test'
-
 import Card_Wallet from '../Components/Card_Wallet'
+
 const ListHeaderComp = (props) => {
     const { deben_value, debes_value, navigation } = props.props
     return (
@@ -56,40 +53,7 @@ const ListHeaderComp = (props) => {
         </View >
     );
 }
-/* const a = {
-    "props": {
-        "deben_value": "400.000",
-        "debes_value": "100.000",
-        "navigation": {
-            "addListener": [Function addListener],
-            "canGoBack": [Function canGoBack],
-            "closeDrawer": [Function anonymous],
-            "dangerouslyGetParent": [Function dangerouslyGetParent],
-            "dangerouslyGetState": [Function anonymous],
-            "dispatch": [Function dispatch],
-            "goBack": [Function anonymous],
-            "isFocused": [Function isFocused],
-            "jumpTo": [Function anonymous],
-            "navigate": [Function anonymous],
-            "openDrawer": [Function anonymous],
-            "pop": [Function anonymous],
-            "popToTop": [Function anonymous],
-            "push": [Function anonymous],
-            "removeListener": [Function removeListener],
-            "replace": [Function anonymous],
-            "reset": [Function anonymous],
-            "setOptions": [Function setOptions],
-            "setParams": [Function anonymous],
-            "toggleDrawer": [Function anonymous]
-        },
-        "route": {
-            "key": "Carteras-uvD59mRNuJjEJKkQKK6FN",
-            "name": "Carteras",
-            "params": undefined
-        }
-    }
-}
- */const ListItem = (itemObject) => {
+const ListItem = (itemObject) => {
     const { type, value } = itemObject.item
     return (
         <View style={{ paddingHorizontal: 30, }}>
@@ -97,7 +61,6 @@ const ListHeaderComp = (props) => {
         </View>
     )
 }
-
 const Main = (props) => {
     return (
         <View>
