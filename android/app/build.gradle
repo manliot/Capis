@@ -136,6 +136,7 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true //add my me cuando la cantidad de metodos de las librerias supera 64k
     }
     splits {
         abi {
