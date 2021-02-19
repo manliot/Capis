@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { View, Text, TouchableOpacity, Image } from 'react-native'
+import firestore from '@react-native-firebase/firestore'
 import { loginWithGoogle } from '../../firebase/Services/GoogleAuth'
 import { loginSuccess } from '../Store/features/User'
 import BgLogin from '../Components/BgLogin'
@@ -9,9 +10,18 @@ import Brand from '../Assets/LogoLetras.svg'
 
 const Login = ({ navigation }) => {
     const dispatch = useDispatch()
+    //create a ref of the colection user
+    const refUsers = firestore().collection('Users');
     const singInGoogle = async () => {
-        const { user } = await loginWithGoogle()
-        await dispatch(loginSuccess({
+        const { user, additionalUserInfo } = await loginWithGoogle()
+        if (additionalUserInfo.isNewUser) {
+            const res = await refUsers.add({
+                "id": user.uid,
+                "deben": 0,
+                "debes": 0
+            });
+        }
+        dispatch(loginSuccess({
             displayName: user.displayName,
             email: user.email,
             photoURL: user.photoURL,
